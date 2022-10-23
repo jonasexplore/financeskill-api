@@ -4,12 +4,14 @@ import { CreateCustomer } from "../../application/use-cases";
 import { HTTP_CODES } from "../../common";
 
 class CreateCustomerController {
-  constructor(private readonly createCustomer: CreateCustomer) {}
+  constructor(private createCustomer: CreateCustomer) {
+    this.handle = this.handle.bind(this);
+  }
 
   async handle(request: Request, response: Response) {
     try {
       const { email } = request.body;
-      ("");
+
       await this.createCustomer.execute({ email });
 
       return response.sendStatus(HTTP_CODES.NO_CONTENT);
