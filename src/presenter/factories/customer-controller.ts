@@ -1,8 +1,13 @@
-import { CreateCustomer } from "../../application/use-cases";
-import { CreateCustomerController } from "../controllers";
+import { CreateCustomer, FindCustomer } from "../../application/use-cases";
+import {
+  CreateCustomerController,
+  FindCustomerController,
+} from "../controllers";
 
 const createCustomer = new CreateCustomer();
+const findCustomer = new FindCustomer();
 
 const createCustomerController = new CreateCustomerController(createCustomer);
+const findCustomerController = new FindCustomerController(findCustomer);
 
-export { createCustomerController };
+export { createCustomerController, findCustomerController };

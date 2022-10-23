@@ -1,1 +1,4 @@
-export { createCustomerController } from "./customer-controller";
+export {
+  createCustomerController,
+  findCustomerController,
+} from "./customer-controller";

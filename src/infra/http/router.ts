@@ -1,9 +1,13 @@
 import { Router } from "express";
 
-import { createCustomerController } from "../../presenter/factories";
+import {
+  createCustomerController,
+  findCustomerController,
+} from "../../presenter/factories";
 
 const router = Router();
 
 router.post("/customers", createCustomerController.handle);
+router.get("/customers", findCustomerController.handle);
 
 export { router };
